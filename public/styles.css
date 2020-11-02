@@ -1,0 +1,273 @@
+:root {
+  --light-blue: #2699fb;
+  --dark-blue: #0065ff;
+  --light-green: #09aa6f;
+  --dark-green: #079460;
+  --shadow-color: rgba(114, 113, 113, 0.473);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: solid 1px rgba(65, 61, 78, 0.116);
+}
+
+.header-head {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  justify-items: center;
+  font-weight: bold;
+  padding: 1rem 0;
+  color: white;
+}
+.header-image {
+  background-color: var(--dark-blue);
+  height: 200px;
+  background-image: url("../Assets/food/pesto_pasta.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+img {
+  margin: 0 auto;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Body Mass */
+.mass-button__container {
+  display: flex;
+  width: 100%;
+  height: 370px;
+  align-items: center;
+  justify-items: center;
+}
+.mass-button__container button {
+  width: 60%;
+  padding: 0.6rem;
+  margin: 0 auto;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  border: 1px solid var(--shadow-color);
+  background-color: var(--light-green);
+  color: #fff;
+  cursor: pointer;
+}
+.mass-button__container button:hover {
+  color: var(--dark-green);
+  background-color: #fff;
+  border: solid 1px var(--dark-green);
+}
+/* Amount Mass */
+.amount-mass {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding: 0.6rem;
+  font-weight: bold;
+  font-family: inherit;
+  color: var(--light-green);
+  box-shadow: 0 4px 5px var(--shadow-color);
+}
+.amount-mass div:last-child {
+  text-align: end;
+}
+.amount-mass div:first-child {
+  text-align: start;
+}
+
+/* CHOOSE MEAL */
+.choose-meal {
+  width: 90%;
+  margin: 1.2rem auto;
+  padding: 0.5rem;
+  display: none;
+}
+form {
+  /* display: block; */
+  border: 1px solid rgba(114, 113, 113, 0.473);
+  padding: 10px;
+}
+.input-template {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding: 0.5rem;
+  text-align: left;
+  align-items: center;
+}
+.input-template div:nth-child(2) {
+  margin-top: -15px;
+}
+
+.meal-title {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  color: var(--light-blue);
+  text-align: center;
+  border-bottom: 1px solid var(--shadow-color);
+}
+.choose-meal button {
+  width: 100%;
+  background-color: var(--light-green);
+  color: white;
+  margin: 0.4rem 0;
+  padding: 0.8rem;
+  outline: none;
+  border: none;
+}
+.choose-meal button:hover {
+  background-color: var(--dark-green);
+}
+
+/* result-conclusion */
+.result-conclusion {
+  display: none;
+  width: 80%;
+  margin: 3rem auto;
+  box-shadow: 0 0 4px 4px var(--shadow-color);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.conc-title {
+  border-bottom: 1px solid var(--shadow-color);
+}
+.conc-title h2 {
+  font-weight: lighter;
+}
+.result-conclusion p {
+  font-size: 16px;
+  font-weight: initial;
+}
+
+/* ***** _______Modal CSS Code______******* */
+#backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  /* display: none; */
+}
+.mError {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+}
+#modal {
+  z-index: 30;
+  position: absolute;
+  top: 1.5rem;
+
+  width: 100%;
+  /* display: none; */
+}
+.modal-template {
+  z-index: 200;
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.mass-form {
+  background-color: #fff;
+  padding: 20% 5%;
+  margin: 5%;
+}
+.mass-form input,
+select {
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  outline: none;
+  border: none;
+  border: solid 1px #ccc;
+}
+.mass-form input[type="text"] {
+  width: 100%;
+}
+
+.mass-form input:hover {
+  background-color: rgb(248, 255, 153);
+}
+.mass-form input:hover {
+  border-bottom: solid 1px var(--light-blue);
+}
+.mass-form h4 {
+  color: var(--dark-green);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.mass-form input[type="submit"] {
+  background-color: green;
+  color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.mass-form input[type="submit"]:hover {
+  background-color: #fff;
+  color: var(--light-blue);
+}
+.input_display {
+  display: none;
+}
+.abc {
+  z-index: 600;
+  position: relative;
+  width: 40%;
+  left: 108px;
+  top: 23px;
+  background-color: rgba(136, 213, 248, 0.287);
+  padding: 4px 9px;
+  margin: 2px;
+  font-size: 0.8rem;
+}
+.input-template input {
+  border: solid 1px var(--dark-green);
+  outline: none;
+  padding: 0.3rem;
+  margin-top: -200px;
+  font-weight: bold;
+  color: #079460;
+}
+.input-template input:hover,
+.input-template input:focus {
+  background-color: rgba(246, 245, 169, 0.527);
+}
+
+@media (min-width: 500px) {
+  #app {
+    width: 450px;
+  }
+  .modal-template {
+    width: 450px;
+  }
+  #modal {
+    width: 450px;
+  }
+  #backdrop {
+    margin-left: -450px;
+  }
+}
